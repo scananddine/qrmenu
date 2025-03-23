@@ -1,0 +1,388 @@
+/* Dark background for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background color */
+    color: #ffffff; /* Light text color for contrast */
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
+}
+
+/* Header styling */
+header {
+    background-color: #1f1f1f; /* Darker header background */
+    padding: 10px 20px; /* Add padding inside the header */
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space between logo and title */
+}
+
+.header-content {
+    display: flex;
+    align-items: center; /* Align logo and title vertically */
+    justify-content: center; /* Center the content horizontally */
+    gap: 15px;
+    width: 100%;
+    padding-right: 5px; /* Add spacing between the logo and the title */
+}
+
+/* Logo styling */
+.logo {
+    width: 60px; /* Adjust the size of the logo */
+    height: 60px; /* Make it a perfect circle */
+    border-radius: 50%; /* Make the logo circular */
+    object-fit: cover; /* Ensure the image fits inside the circle */
+    margin-right: 10px; /* Add spacing between the logo and the title */
+}
+
+/* Title styling */
+h1 {
+    color: #57fc65; /* Accent color for the title */
+    margin: 0;
+    font-size: 2em;
+    text-align: left; /* Align the title to the left */
+    flex-grow: 1; /* Allow the title to take up remaining space */
+    padding-left: 10px; /* Add padding to the left of the title */
+}
+
+/* Menu container with dark theme */
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Category headings */
+.category-heading {
+    color: #57fc65; /* Accent color for headings */
+    border-bottom: 2px solid #57fc65;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    scroll-margin-top: 70px; /* For smooth scrolling with sticky header */
+}
+
+.category-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+/* Menu items with dark theme */
+.menu-item {
+    background-color: #1f1f1f; /* Dark background for menu items */
+    border-radius: 8px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    transition: transform 0.2s;
+    overflow: hidden;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7); /* Stronger shadow on hover */
+}
+
+.menu-item-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.menu-item-content {
+    padding: 15px;
+}
+
+.menu-item h3 {
+    margin-top: 0;
+    color: #ffffff; /* Light text color */
+    font-size: 1.3em;
+}
+
+.menu-item p {
+    color: #cccccc; /* Slightly lighter text for descriptions */
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.menu-item .price {
+    display: block;
+    font-weight: bold;
+    color: #57fc65; /* Accent color for prices */
+    font-size: 1.2em;
+    text-align: right;
+}
+
+/* Error messages */
+.error {
+    color: #57fc65; /* Accent color for errors */
+    text-align: center;
+    font-size: 1.2em;
+    padding: 20px;
+}
+
+/* Footer with dark theme */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #1f1f1f; /* Dark footer background */
+    color: #cccccc; /* Light text color */
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #57fc65; /* Accent color for the button */
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+/* Search bar with dark theme */
+#search-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#search-bar {
+    width: 0;
+    opacity: 0;
+    transition: width 0.3s ease, opacity 0.3s ease;
+    padding: 8px 10px;
+    font-size: 1em;
+    border: 1px solid #444;
+    border-radius: 20px;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    margin-left: 10px; /* Space between search bar and icon */
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#search-bar.visible {
+    width: 200px; /* Expand the search bar */
+    opacity: 1;
+}
+
+/* When the search bar is hidden, move the search icon to the extreme right */
+.search-container.hidden-bar .search-icon {
+    margin-left: auto; /* Push the search icon to the extreme right */
+}
+
+/* Search container styling */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align to the right */
+    margin-left: auto; /* Push the search container to the right */
+}
+
+.search-icon {
+    width: 20px; /* Icon size */
+    height: 20px; /* Icon size */
+    cursor: pointer;
+    color: white; /* Make the icon white */
+    transition: transform 0.2s ease, color 0.3s ease;
+    padding-left: 5px;
+    /* padding-right: 6px; Smooth transition for hover effects
+} */}
+
+
+
+.search-icon:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    color: #cccccc; /* Slightly dim the white color on hover */
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+    .search-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    #search-bar.visible {
+        width: 150px; /* Smaller search bar for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    #search-bar.visible {
+        width: 120px; /* Even smaller search bar for very small screens */
+    }
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+    .search-icon {
+        width: 18px; /* Smaller size for tablets */
+        height: 18px;
+    }
+
+    #search-bar.visible {
+        width: 150px; /* Smaller search bar for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .search-icon {
+        width: 16px; /* Even smaller size for mobile */
+        height: 16px;
+    }
+
+    #search-bar.visible {
+        width: 120px; /* Even smaller search bar for very small screens */
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    .category-nav {
+        display: flex; /* Show category navigation on mobile */
+    }
+    
+    .category-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .menu-item {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    /* Header adjustments for mobile */
+    header {
+        padding: 8px 15px; /* Reduce padding inside the header */
+    }
+
+    .logo {
+        width: 50px; /* Smaller logo size */
+        height: 50px; /* Maintain circular shape */
+        margin-right: 5px; /* Reduce spacing between logo and title */
+        border: none; /* Remove border from the logo */
+    }
+
+    h1 {
+        font-size: 1.8em; /* Slightly smaller title font size */
+        padding-left: 0; /* Remove extra padding */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+        padding: 0 10px;
+    }
+    
+    .menu-container {
+        padding: 0 10px;
+    }
+    
+    .category-heading {
+        font-size: 1.3em;
+        margin-top: 30px;
+    }
+    
+    .menu-item-content {
+        padding: 10px;
+    }
+    
+    .menu-item h3 {
+        font-size: 1.1em;
+    }
+    
+    .menu-item p {
+        font-size: 0.85em;
+    }
+    
+    .menu-item .price {
+        font-size: 1.1em;
+    }
+    
+    .menu-item-image {
+        height: 150px;
+    }
+    
+    .back-to-top {
+        bottom: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Further adjustments for very small screens */
+    header {
+        padding: 5px 10px; /* Further reduce padding */
+    }
+
+    .logo {
+        width: 40px; /* Even smaller logo size */
+        height: 40px; /* Maintain circular shape */
+        margin-right: -10px; /* Reduce spacing even more */
+        border: none; /* Ensure no border is applied */
+    }
+
+    h1 {
+        font-size: 1.25rem; /* Smaller title font size */
+        padding-left: 0; /* Remove extra padding */
+    }
+}
+
+@media (max-width: 480px) {
+    #search-bar.visible {
+        width: 120px; /* Even smaller search bar for very small screens */
+    }
+}
+
+/* Ensure touch targets are large enough */
+@media (hover: none) {
+    .menu-item:hover {
+        transform: none;
+    }
+    
+    .menu-item {
+        transition: none;
+    }
+    
+    .menu-item-content {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    
+    button, a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
