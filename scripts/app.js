@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             {
                 "id": 2,
-                "name": "Pepperoni Supreme",
-                "description": "Loaded with pepperoni, mozzarella cheese and our signature tomato sauce.",
+                "name": "Veg Supreme",
+                "description": "Loaded with Vegetables, mozzarella cheese and our signature tomato sauce.",
                 "price": 14.99,
                 "category": "Pizza",
                 "type": "Non-Vegetarian",
