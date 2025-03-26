@@ -198,7 +198,7 @@ body.dark .menu-item {
 }
 
 .menu-item-content {
-    padding: 15px;
+    padding: 1px;
 }
 
 /* Menu item text - light theme by default */
@@ -436,6 +436,9 @@ body.dark .search-icon {
     footer{
         font-size: 10px;
     }
+    .menu-item-content {
+        padding: 1px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -455,7 +458,7 @@ body.dark .search-icon {
     }
     
     .menu-item-content {
-        padding: 10px;
+        padding: 1px;
     }
     
     .menu-item h3 {
@@ -516,8 +519,8 @@ body.dark .search-icon {
     }
     
     .menu-item-content {
-        padding-top: 12px;
-        padding-bottom: 12px;
+        /* padding-top: 12px;
+        padding-bottom: 12px; */
     }
     
     button, a {
