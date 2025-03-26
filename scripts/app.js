@@ -318,7 +318,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial render of the full menu
     renderMenu(menuData.menu);
     initMobileNavigation();
-=======
 document.addEventListener('DOMContentLoaded', () => {
     const menuContainer = document.getElementById('menu-container');
     const searchBar = document.getElementById('search-bar'); // Get the search bar element
