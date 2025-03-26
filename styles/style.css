@@ -170,7 +170,7 @@ body.dark .category-heading {
 
 /* Menu items - light theme by default */
 .menu-item {
-    background-color: #ffffff; /* Light background for menu items */
+    background-color: #d0d472; /* Light background for menu items */
     border-radius: 8px;
     margin: 10px;
     width: 300px;
@@ -205,8 +205,12 @@ body.dark .menu-item {
 .menu-item h3 {
     margin-top: 0;
     color: #121212; /* Dark text for light theme */
-    font-size: 1.3em;
+    font-size: 1.5em;
     text-align: center;
+    font-family: 'Cormorant Garamond', serif; /* Elegant serif similar to Zefani */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: -7px;
 }
 
 body.dark .menu-item h3 {
