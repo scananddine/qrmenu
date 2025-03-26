@@ -237,10 +237,11 @@ body.dark .menu-item .price {
 /* Footer - light theme by default */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     margin-top: 40px;
     background-color: #66c46e; /* Light green background for footer */
     color: #121212; /* Dark text for light theme */
+    
 }
 
 body.dark footer {
