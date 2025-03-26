@@ -241,6 +241,9 @@ footer {
     margin-top: 40px;
     background-color: #66c46e; /* Light green background for footer */
     color: #121212; /* Dark text for light theme */
+    position: sticky;
+    bottom: 0;
+    width: 100%;
     
 }
 
