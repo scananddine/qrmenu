@@ -433,6 +433,9 @@ body.dark .search-icon {
         font-size: 1.8em; /* Slightly smaller title font size */
         padding-left: 0; /* Remove extra padding */
     }
+    footer{
+        font-size: 10px;
+    }
 }
 
 @media (max-width: 480px) {
