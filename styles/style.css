@@ -248,13 +248,14 @@ body.dark .menu-item .price {
 footer {
     flex-shrink: 0; /* Prevent the footer from shrinking */
     text-align: center;
-    padding: 10px;
+    padding: 3px;
     background-color: #66c46e; /* Light green background for footer */
     color: #121212; /* Dark text for light theme */
     width: 100%;
     position: fixed; /* Change to fixed instead of sticky */
     bottom: 0;
     left: 0;
+    font-size: 13px;
 }
 
 body.dark footer {
