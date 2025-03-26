@@ -9,39 +9,39 @@ document.addEventListener('DOMContentLoaded', () => {
         "menu": [
             {
                 "id": 1,
-                "name": "Classic Margherita",
-                "description": "Fresh mozzarella, tomatoes, basil, and olive oil on our house-made dough.",
+                "name": "Pizza",
+                "description": "",
                 "price": 12.99,
-                "category": "Pizza",
+                "category": "Menu",
                 "type": "Vegetarian",
                 "image": "./images/pizza mimi.jpg"
             },
             {
                 "id": 2,
-                "name": "Pepperoni Supreme",
-                "description": "Loaded with pepperoni, mozzarella cheese and our signature tomato sauce.",
+                "name": "Pasta",
+                "description": "",
                 "price": 14.99,
-                "category": "Pizza",
+                "category": "Menu",
                 "type": "Non-Vegetarian",
-                "image": "./images/pizza mimi.jpg"
+                "image": "./images/pasta mimi.jpg"
             },
             {
                 "id": 3,
-                "name": "Garden Fresh Salad",
-                "description": "Mixed greens, cherry tomatoes, cucumbers, and balsamic vinaigrette.",
+                "name": "Burger",
+                "description": "",
                 "price": 8.99,
-                "category": "Salad",
+                "category": "Menu",
                 "type": "Vegan",
-                "image": "./images/salad mimi.jpg"
+                "image": "images/burger mimi.png"
             },
             {
                 "id": 4,
-                "name": "Caesar Salad",
-                "description": "Crisp romaine lettuce with Caesar dressing, croutons, and parmesan.",
+                "name": "Nachos",
+                "description": "",
                 "price": 9.99,
-                "category": "Salad",
+                "category": "Menu",
                 "type": "Vegetarian",
-                "image": "./images/salad mimi.jpg"
+                "image": "./images/nachos mimi.jpg"
             },
             {
                 "id": 5,
@@ -225,7 +225,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         ]
     };
-
+    const checkbox = document.getElementById("checkbox")
+    checkbox.addEventListener("change", () => {
+      document.body.classList.toggle("dark")
+    })
     // Render the menu
     function renderMenu(menuItems) {
         menuContainer.innerHTML = ''; // Clear the container
@@ -260,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="menu-item-content">
                         <h3>${item.name}</h3>
                         <p>${item.description}</p>
-                        <span class="price">$${item.price.toFixed(2)}</span>
+                       
                     </div>
                 `;
                 categorySection.appendChild(menuItem);
