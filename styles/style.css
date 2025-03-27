@@ -139,11 +139,11 @@ body.dark h2 {
 .menu-container {
     flex: 1 0 auto; /* This forces the content to take up available space */
     max-width: 1200px;
-<<<<<<< HEAD
+
     margin: 0;
-=======
+
     margin: 0 0 0 0;
->>>>>>> 86061781c5d07181b383f543b53969dd0c22af8f
+
     padding: 0 15px;
     padding-bottom: 60px; /* Add padding to prevent content from being hidden behind footer */
 }
@@ -218,11 +218,11 @@ body.dark .menu-item {
 }
 
 body.dark .menu-item h3 {
-<<<<<<< HEAD
+
     color: #d0d472; /* Light text for dark mode */
-=======
+
     color: #ced08c; /* Light text for dark mode */
->>>>>>> 86061781c5d07181b383f543b53969dd0c22af8f
+
 }
 
 .menu-item p {
