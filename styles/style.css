@@ -1,4 +1,4 @@
-/* Light background for the body (default theme) */
+/* Light background for the body (default theme)  */
 html, body {
     min-height: 100%;
     height: 100%;
@@ -139,7 +139,7 @@ body.dark h2 {
 .menu-container {
     flex: 1 0 auto; /* This forces the content to take up available space */
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0;
     padding: 0 15px;
     padding-bottom: 60px; /* Add padding to prevent content from being hidden behind footer */
 }
@@ -214,7 +214,7 @@ body.dark .menu-item {
 }
 
 body.dark .menu-item h3 {
-    color: #ffffff; /* Light text for dark mode */
+    color: #d0d472; /* Light text for dark mode */
 }
 
 .menu-item p {
@@ -306,7 +306,7 @@ body.dark footer {
     font-size: 1em;
     border: 1px solid #ddd;
     border-radius: 20px;
-    background-color: #ffffff;
+    background-color: #dbdd9f;
     color: #121212;
     margin-left: 10px;
     outline: none;
@@ -522,11 +522,6 @@ body.dark .search-icon {
         transition: none;
     }
     
-    .menu-item-content {
-        /* padding-top: 12px;
-        padding-bottom: 12px; */
-    }
-    
     button, a {
         min-height: 44px;
         min-width: 44px;
@@ -553,3 +548,131 @@ body.dark .search-icon {
     font-size: 7px;
   }
 }
+
+
+
+/* Detailed view styles */
+.detailed-view {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+/* Detailed view container for the list */
+.detailed-view {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Each detailed item in the list */
+.detailed-item {
+    display: flex;
+    flex-direction: column;
+    /* Stack elements vertically */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* Detailed item image: full width */
+.detailed-item-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Detailed item content: text below the image */
+.detailed-item-content {
+    text-align: center;
+}
+
+/* Back button style (to be used at both top and bottom) */
+.back-button {
+    display: block;
+    /* Make it a block-level element */
+    margin: 20px auto;
+    /* Auto margins on left and right center it */
+    padding: 10px 20px;
+    color: #ff6600;
+    /* background: #ff6600; */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    overflow:auto;
+}
+
+.back{
+    width: 15%;
+    height: auto;
+}
+
+/* Category menu container styled as a vertical list */
+.category-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* Removing vertical scrollbar: do not set overflow-y or set to hidden */
+    overflow-y: hidden;
+    align-items: center;
+}
+
+/* Each list item in the category menu in a single row */
+.category-menu-item {
+    background-color: #d0d472;
+    /* Dark background for menu items */
+    border-radius: 8px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    /* Subtle shadow for depth */
+    transition: transform 0.2s;
+    overflow: hidden;
+}
+
+body.dark .category-menu-item{
+    background-color: #1f1f1f;
+}
+
+body.dark .category-menu-item-content {
+    color: #d0d472;
+}
+
+/* Category menu item image: full width */
+.category-menu-item-image {
+    width: 100%;
+    /* height: auto; */
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Category menu item content below the image */
+.category-menu-item-content {
+    text-align: center;
+    width: 100%;
+}
+
+/* Category heading in detailed view */
+.detailed-view .category-heading {
+    text-align: left;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px 0 15px 0;
+    padding-left: 10px;
+    color: #333;
+}
+
+
+
+/* .menu-item-content {
+     padding-top: 12px;
+    padding-bottom: 12px; }*/
