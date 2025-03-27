@@ -139,7 +139,7 @@ body.dark h2 {
 .menu-container {
     flex: 1 0 auto; /* This forces the content to take up available space */
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 0 0 0;
     padding: 0 15px;
     padding-bottom: 60px; /* Add padding to prevent content from being hidden behind footer */
 }
