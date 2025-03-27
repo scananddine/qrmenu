@@ -155,7 +155,7 @@ body.dark h2 {
 }
 
 body.dark .category-heading {
-    color: #57fc65; /* Light accent color for dark mode */
+    color: #66c46e; /* Light accent color for dark mode */
     border-bottom: 2px solid #66c46e;
 }
 
@@ -214,7 +214,7 @@ body.dark .menu-item {
 }
 
 body.dark .menu-item h3 {
-    color: #ffffff; /* Light text for dark mode */
+    color: #ced08c; /* Light text for dark mode */
 }
 
 .menu-item p {
