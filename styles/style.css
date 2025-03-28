@@ -760,7 +760,6 @@ body.dark .category-header {
 
 /* General styling for category menu items */
 .category-menu-item {
-<<<<<<< HEAD
     background-color: #d0d472;
     /* Light background for menu items */
     border-radius: 8px;
@@ -786,53 +785,27 @@ body.dark .category-header {
     /* Space out content */
     padding: 0;
     /* Remove padding to ensure the image sticks to the edges */
-=======
-    background-color: #d0d472; /* Light background for menu items */
-    border-radius: 8px; /* Rounded corners */
-    margin: 10px;
-    width: 100%; /* Make the card take full width */
-    max-width: 300px; /* Limit the maximum width */
-    overflow: hidden; /* Prevent content overflow */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack content vertically */
-    align-items: flex-start; /* Align content to the left */
-    justify-content: space-between; /* Space out content */
-    padding: 0; /* Remove padding to ensure the image sticks to the edges */
->>>>>>> f19f8bfad8a31a974a0149f7a5103c4a1b5d198c
 }
 
 /* Hover effect for category menu items */
 .category-menu-item:hover {
-<<<<<<< HEAD
     transform: translateY(-3px);
     /* Slight lift on hover */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     /* Slightly stronger shadow on hover */
-=======
-    transform: translateY(-3px); /* Slight lift on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
->>>>>>> f19f8bfad8a31a974a0149f7a5103c4a1b5d198c
 }
 
 /* Dark mode styling for category menu items */
 body.dark .category-menu-item {
-<<<<<<< HEAD
     background-color: #1f1f1f;
     /* Dark background for menu items */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     /* Subtle shadow for dark mode */
-=======
-    background-color: #1f1f1f; /* Dark background for menu items */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for dark mode */
->>>>>>> f19f8bfad8a31a974a0149f7a5103c4a1b5d198c
 }
 
 /* Category menu item image: full width */
 .category-menu-item-image {
     width: 100%;
-<<<<<<< HEAD
     height: 150px;
     /* Adjust height to make it smaller */
     object-fit: cover;
@@ -841,22 +814,12 @@ body.dark .category-menu-item {
     /* Remove margin to stick to the edges */
     border-radius: 0;
     /* Remove border radius for the image */
-=======
-    height: 150px; /* Adjust height to make it smaller */
-    object-fit: cover; /* Ensure the image fits inside the container */
-    margin: 0; /* Remove margin to stick to the edges */
-    border-radius: 0; /* Remove border radius for the image */
->>>>>>> f19f8bfad8a31a974a0149f7a5103c4a1b5d198c
 }
 
 /* Category menu item content below the image */
 .category-menu-item-content {
-<<<<<<< HEAD
     padding: 10px;
     /* Add padding only for the content */
-=======
-    padding: 10px; /* Add padding only for the content */
->>>>>>> f19f8bfad8a31a974a0149f7a5103c4a1b5d198c
     text-align: left;
     width: 100%;
 }
@@ -864,7 +827,6 @@ body.dark .category-menu-item {
 /* Category menu item heading */
 .category-menu-item-content h3 {
     margin-top: 0;
-<<<<<<< HEAD
     color: #121212;
     /* Dark text for light theme */
     font-size: 1.2em;
@@ -875,29 +837,16 @@ body.dark .category-menu-item {
     letter-spacing: 0.5px;
     margin-bottom: 5px;
     /* Add spacing below the heading */
-=======
-    color: #121212; /* Dark text for light theme */
-    font-size: 1.2em; /* Adjust font size */
-    font-family: 'Cormorant Garamond', serif; /* Elegant serif similar to Zefani */
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    margin-bottom: 5px; /* Add spacing below the heading */
->>>>>>> f19f8bfad8a31a974a0149f7a5103c4a1b5d198c
 }
 
 /* Dark mode heading */
 body.dark .category-menu-item-content h3 {
-<<<<<<< HEAD
     color: #ced08c;
     /* Light text for dark mode */
-=======
-    color: #ced08c; /* Light text for dark mode */
->>>>>>> f19f8bfad8a31a974a0149f7a5103c4a1b5d198c
 }
 
 /* Category menu item description */
 .category-menu-item-content p {
-<<<<<<< HEAD
     color: #333333;
     /* Dark grey text for light theme */
     margin-bottom: 10px;
@@ -908,31 +857,18 @@ body.dark .category-menu-item-content h3 {
     font-style: italic;
     font-family: 'Cormorant Garamond', serif;
     /* Adjust line height for readability */
-=======
-    color: #333333; /* Dark grey text for light theme */
-    margin-bottom: 10px; /* Adjust spacing below the description */
-    font-size: 0.9em; /* Adjust font size */
-    line-height: 1.4; 
-    font-style: italic;
-    font-family: 'Cormorant Garamond', serif;/* Adjust line height for readability */
->>>>>>> f19f8bfad8a31a974a0149f7a5103c4a1b5d198c
 }
 
 /* Dark mode description */
 body.dark .category-menu-item-content p {
-<<<<<<< HEAD
     color: #cccccc;
     /* Light grey text for dark mode */
-=======
-    color: #cccccc; /* Light grey text for dark mode */
->>>>>>> f19f8bfad8a31a974a0149f7a5103c4a1b5d198c
 }
 
 /* Category menu item price */
 .category-menu-item-content .price {
     display: block;
     font-weight: bold;
-<<<<<<< HEAD
     color: #0f4f12;
     /* Dark green for light theme */
     font-size: 1.1em;
@@ -941,42 +877,26 @@ body.dark .category-menu-item-content p {
     /* Align price to the right */
     margin-top: 5px;
     /* Add spacing above the price */
-=======
-    color: #0f4f12; /* Dark green for light theme */
-    font-size: 1.1em; /* Adjust font size */
-    text-align: right; /* Align price to the right */
-    margin-top: 5px; /* Add spacing above the price */
->>>>>>> f19f8bfad8a31a974a0149f7a5103c4a1b5d198c
 }
 
 /* Dark mode price */
 body.dark .category-menu-item-content .price {
-<<<<<<< HEAD
     color: #57fc65;
     /* Light green for dark mode */
-=======
-    color: #57fc65; /* Light green for dark mode */
->>>>>>> f19f8bfad8a31a974a0149f7a5103c4a1b5d198c
 }
 
 /* Responsive adjustments for mobile screens */
 @media (max-width: 768px) {
     .category-menu-item {
-<<<<<<< HEAD
         width: 90%;
         /* Full width for tablets */
         margin: 10px auto;
         /* Center the cards */
-=======
-        width: 90%; /* Full width for tablets */
-        margin: 10px auto; /* Center the cards */
->>>>>>> f19f8bfad8a31a974a0149f7a5103c4a1b5d198c
     }
 }
 
 @media (max-width: 480px) {
     .category-menu-item {
-<<<<<<< HEAD
         width: 100%;
         /* Full width for very small screens */
         margin: 10px 0;
@@ -1026,26 +946,4 @@ body.dark .category-menu-item-content .price {
 body.dark .category-header h1 {
     color: #57fc65;
     /* Light text color for dark mode */
-=======
-        width: 100%; /* Full width for very small screens */
-        margin: 10px 0; /* Reduce spacing between cards */
-    }
-
-    .category-menu-item-image {
-        height: 150px; /* Smaller image height for mobile */
-    }
-
-    .category-menu-item-content h3 {
-        font-size: 1.3em; /* Smaller font size for mobile */
-    }
-
-    .category-menu-item-content p {
-        font-size: 0.95em; /* Smaller font size for description */
-    }
-
-    .category-menu-item-content .price {
-        font-size: 1em; 
-        margin-right: 17px;/* Adjust price font size */
-    }
->>>>>>> f19f8bfad8a31a974a0149f7a5103c4a1b5d198c
 }
