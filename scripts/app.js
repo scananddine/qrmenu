@@ -181,7 +181,7 @@ const categoryLists = {
             id: 1,
             name: "Margherita Pizza",
             description: "Classic pizza with fresh mozzarella, tomatoes, and basil.",
-            price: 12.99,
+            price: 450,
             type: "Vegetarian",
             image: "./images/pizza_margherita.jpeg"
         },
@@ -189,7 +189,7 @@ const categoryLists = {
             id: 2,
             name: "Veggie Supreme Pizza",
             description: "Topped with bell peppers, onions, olives, and mushrooms.",
-            price: 13.99,
+            price: 450,
             type: "Vegetarian",
             image: "./images/pizza_veggie.jpg"
         }
@@ -199,7 +199,7 @@ const categoryLists = {
             id: 3,
             name: "Penne Arrabbiata",
             description: "Penne pasta in a spicy tomato sauce with fresh herbs.",
-            price: 11.99,
+            price: 450,
             type: "Vegetarian",
             image: "./images/pasta_arrabbiata.jpg"
         },
@@ -207,7 +207,7 @@ const categoryLists = {
             id: 4,
             name: "Vegetable Alfredo Pasta",
             description: "Fettuccine pasta with creamy alfredo sauce and mixed vegetables.",
-            price: 13.99,
+            price: 450,
             type: "Vegetarian",
             image: "./images/pasta_alfredo.jpg"
         }
@@ -217,7 +217,7 @@ const categoryLists = {
             id: 5,
             name: "Classic Veggie Burger",
             description: "A delicious plant-based patty with lettuce, tomato, and cheese.",
-            price: 9.99,
+            price: 450,
             type: "Vegetarian",
             image: "./images/burger_veggie.jpg"
         },
@@ -225,7 +225,7 @@ const categoryLists = {
             id: 6,
             name: "Spicy Paneer Burger",
             description: "Crispy paneer patty with a spicy mayo sauce.",
-            price: 10.99,
+            price: 450,
             type: "Vegetarian",
             image: "./images/burger_paneer.jpg"
         },
@@ -233,7 +233,7 @@ const categoryLists = {
             id: 7,
             name: "Mushroom Swiss Burger",
             description: "Grilled mushrooms with melted Swiss cheese on a toasted bun.",
-            price: 11.49,
+            price: 450,
             type: "Vegetarian",
             image: "./images/burger_mushroom.jpg"
         }
@@ -243,7 +243,7 @@ const categoryLists = {
             id: 8,
             name: "Cheesy Nachos",
             description: "Crunchy tortilla chips topped with melted cheese and jalapeños.",
-            price: 8.99,
+            price: 450,
             type: "Vegetarian",
             image: "./images/nachos_cheese.jpg"
         },
@@ -251,7 +251,7 @@ const categoryLists = {
             id: 9,
             name: "Loaded Veggie Nachos",
             description: "Tortilla chips with beans, guacamole, sour cream, and salsa.",
-            price: 9.49,
+            price: 450,
             type: "Vegetarian",
             image: "./images/nachos_loaded.jpg"
         },
@@ -259,7 +259,7 @@ const categoryLists = {
             id: 10,
             name: "Spicy Mexican Nachos",
             description: "Tortilla chips with spicy salsa, corn, and cheese.",
-            price: 9.99,
+            price: 450,
             type: "Vegetarian",
             image: "./images/nachos_mexican.jpg"
         }
@@ -277,9 +277,35 @@ function renderCategoryItems(category) {
         menuContainer.innerHTML = `<p>No items available in this category.</p>`;
         return;
     }
-    const categoryHeader = document.createElement('h1');
-    categoryHeader.textContent = category; // Set the category name as the header
+   // Create category header with back button
+    const categoryHeader = document.createElement('div');
     categoryHeader.classList.add('category-header');
+
+    const backButton = document.createElement('img');
+    backButton.src = document.body.classList.contains('dark') 
+        ? "./images/dark_back_btn.png"
+        : "./images/light_back_btn.png";
+    backButton.alt = 'Back';
+    backButton.classList.add('back-button-image');
+
+    // Update back button image on theme change
+    const checkbox = document.getElementById('checkbox');
+    checkbox.addEventListener('change', () => {
+        backButton.src = document.body.classList.contains('dark') 
+            ? "./images/dark_back_btn.png"
+            : "./images/light_back_btn.png";
+    });
+
+    backButton.addEventListener('click', () => {
+        menuContainer.classList.remove('detailed-view'); // Remove detailed view class
+        renderMenu(menuData.menu); // Render the main menu
+    });
+
+    const categoryTitle = document.createElement('h1');
+    categoryTitle.textContent = category;
+
+    categoryHeader.appendChild(backButton);
+    categoryHeader.appendChild(categoryTitle);
     menuContainer.appendChild(categoryHeader);
     const categorySection = document.createElement('div');
     categorySection.classList.add('category-menu');
@@ -292,7 +318,7 @@ function renderCategoryItems(category) {
             <div class="category-menu-item-content">
                 <h3>${item.name}</h3>
                 <p>${item.description}</p>
-                <p><strong>$${item.price.toFixed(2)}</strong></p>
+                <p class="price"><strong>₹${item.price.toFixed(2)}</strong></p>
             </div>
         `;
 
@@ -300,17 +326,6 @@ function renderCategoryItems(category) {
     });
 
     menuContainer.appendChild(categorySection);
-
-    const backButton = document.createElement('button');
-    backButton.innerHTML = '<img class="back" src="./images/back-button.png" alt="Back">';
-    backButton.classList.add('back-button'); 
-
-    backButton.addEventListener('click', () => {
-        menuContainer.classList.remove('detailed-view'); 
-        renderMenu(menuData.menu); 
-    });
-
-    menuContainer.appendChild(backButton);
 }
 
 // Attach event listeners to menu items (Modify this in your existing `renderMenu` function)

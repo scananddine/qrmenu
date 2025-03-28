@@ -1,35 +1,44 @@
 /* Light background for the body (default theme)  */
-html, body {
+html,
+body {
     min-height: 100%;
     height: 100%;
 }
+
 .back {
     width: 24px;
     height: 24px;
-    margin-right: 10px; /* Space between icon and text */
-    color: #121212; /* Dark color for light theme */
+    margin-right: 10px;
+    /* Space between icon and text */
+    color: #121212;
+    /* Dark color for light theme */
 }
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-family: Arial, sans-serif;
-    background-color: #dbdd9f; /* Light background color (was dark theme) */
-    color: #121212; /* Dark text color for contrast */
+    background-color: #dbdd9f;
+    /* Light background color (was dark theme) */
+    color: #121212;
+    /* Dark text color for contrast */
     margin: 0;
     padding: 0;
-    -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
+    -webkit-text-size-adjust: 100%;
+    /* Prevent font scaling in landscape */
 }
 
 /* Header styling - light theme by default */
 header {
-    background-color: #66c46e; /* Light header background (was dark theme) */
+    background-color: #66c46e;
+    /* Light header background (was dark theme) */
     padding: 10px 20px;
     margin-bottom: 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,23 +46,30 @@ header {
 
 /* Dark mode styles */
 body.dark {
-    background-color: #121212; /* Dark background when toggle is active */
-    color: #ffffff; /* Light text color for dark mode */
+    background-color: #121212;
+    /* Dark background when toggle is active */
+    color: #ffffff;
+    /* Light text color for dark mode */
 }
 
 body.dark header {
-    background-color: #1f1f1f; /* Darker header background for dark mode */
+    background-color: #1f1f1f;
+    /* Darker header background for dark mode */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .header-content {
     display: flex;
-    align-items: center; /* Align logo and title vertically */
-    justify-content: center; /* Center the content horizontally */
+    align-items: center;
+    /* Align logo and title vertically */
+    justify-content: center;
+    /* Center the content horizontally */
     gap: 15px;
     width: 100%;
-    padding-right: 5px; /* Add spacing between the logo and the title */
+    padding-right: 5px;
+    /* Add spacing between the logo and the title */
 }
+
 .search-n-toggle {
     display: flex;
     flex-direction: column;
@@ -61,13 +77,16 @@ body.dark header {
     gap: 15px;
 }
 
-body.dark h1, body.dark .support a {
-    color: #57fc65; /* Light accent color for dark mode */
+body.dark h1,
+body.dark .support a {
+    color: #57fc65;
+    /* Light accent color for dark mode */
 }
 
 /* Title styling - light theme by default */
 h1 {
-    color: #121212; /* Dark color for light theme */
+    color: #121212;
+    /* Dark color for light theme */
     margin: 0;
     font-family: 'GFS Didot', serif;
     font-weight: 400;
@@ -79,70 +98,87 @@ h1 {
 
 /* Heading styling - light theme by default */
 h2 {
-    font-family: 'Libre Baskerville', serif; 
+    font-family: 'Libre Baskerville', serif;
     font-weight: 700;
-    color: #121212; /* Dark color for light theme */
+    color: #121212;
+    /* Dark color for light theme */
 }
 
 body.dark h2 {
-    color: #66c46e; /* Green accent for dark mode */
+    color: #66c46e;
+    /* Green accent for dark mode */
 }
 
 .checkbox {
-  opacity: 0;
-  position: absolute;
+    opacity: 0;
+    position: absolute;
 }
 
 .checkbox-label {
-  background-color: #111;
-  width: 32px; /* Reduced from 40px */
-  height: 12px; /* Reduced from 15px */
-  border-radius: 50px;
-  position: relative;
-  padding: 3px; /* Reduced from 5px */
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background-color: #111;
+    width: 32px;
+    /* Reduced from 40px */
+    height: 12px;
+    /* Reduced from 15px */
+    border-radius: 50px;
+    position: relative;
+    padding: 3px;
+    /* Reduced from 5px */
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .fa-moon {
-  color: #f1c40f;
-  font-size: 12px; /* Added smaller font size */
+    color: #f1c40f;
+    font-size: 12px;
+    /* Added smaller font size */
 }
 
 .fa-sun {
-  color: #f39c12;
-  font-size: 12px; /* Added smaller font size */
+    color: #f39c12;
+    font-size: 12px;
+    /* Added smaller font size */
 }
 
 .checkbox-label .ball {
-  background-color: #fff;
-  width: 16px; /* Reduced from 20px */
-  height: 16px; /* Reduced from 20px */
-  position: absolute;
-  left: 2px;
-  top: 1px; /* Adjusted from 2px for better vertical alignment */
-  border-radius: 50%;
-  transition: transform 0.2s linear;
+    background-color: #fff;
+    width: 16px;
+    /* Reduced from 20px */
+    height: 16px;
+    /* Reduced from 20px */
+    position: absolute;
+    left: 2px;
+    top: 1px;
+    /* Adjusted from 2px for better vertical alignment */
+    border-radius: 50%;
+    transition: transform 0.2s linear;
 }
 
-.checkbox:checked + .checkbox-label .ball {
-  transform: translateX(19px); /* Adjusted from 24px to match the new width */
+.checkbox:checked+.checkbox-label .ball {
+    transform: translateX(19px);
+    /* Adjusted from 24px to match the new width */
 }
 
 /* Logo styling */
 .logo {
-    width: 60px; /* Adjust the size of the logo */
-    height: 60px; /* Make it a perfect circle */
-    border-radius: 50%; /* Make the logo circular */
-    object-fit: cover; /* Ensure the image fits inside the circle */
-    margin-right: 10px; /* Add spacing between the logo and the title */
+    width: 60px;
+    /* Adjust the size of the logo */
+    height: 60px;
+    /* Make it a perfect circle */
+    border-radius: 50%;
+    /* Make the logo circular */
+    object-fit: cover;
+    /* Ensure the image fits inside the circle */
+    margin-right: 10px;
+    /* Add spacing between the logo and the title */
 }
 
 /* Menu container with dark theme */
 .menu-container {
-    flex: 1 0 auto; /* This forces the content to take up available space */
+    flex: 1 0 auto;
+    /* This forces the content to take up available space */
     max-width: 1200px;
 
     margin: 0;
@@ -150,12 +186,14 @@ body.dark h2 {
     margin: 0 0 0 0;
 
     padding: 0 15px;
-    padding-bottom: 60px; /* Add padding to prevent content from being hidden behind footer */
+    padding-bottom: 60px;
+    /* Add padding to prevent content from being hidden behind footer */
 }
 
 /* Category headings - light theme by default */
 .category-heading {
-    color: #0f4f12; /* Dark green for light theme */
+    color: #0f4f12;
+    /* Dark green for light theme */
     border-bottom: 2px solid #0f4f12;
     padding-bottom: 10px;
     margin-top: 40px;
@@ -164,7 +202,8 @@ body.dark h2 {
 }
 
 body.dark .category-heading {
-    color: #66c46e; /* Light accent color for dark mode */
+    color: #66c46e;
+    /* Light accent color for dark mode */
     border-bottom: 2px solid #66c46e;
 }
 
@@ -179,7 +218,8 @@ body.dark .category-heading {
 
 /* Menu items - light theme by default */
 .menu-item {
-    background-color: #d0d472; /* Light background for menu items */
+    background-color: #d0d472;
+    /* Light background for menu items */
     border-radius: 8px;
     margin: 10px;
     width: 300px;
@@ -189,13 +229,15 @@ body.dark .category-heading {
 }
 
 body.dark .menu-item {
-    background-color: #1f1f1f; /* Dark background for menu items */
+    background-color: #1f1f1f;
+    /* Dark background for menu items */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .menu-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7); /* Stronger shadow on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+    /* Stronger shadow on hover */
 }
 
 .menu-item-image {
@@ -213,10 +255,12 @@ body.dark .menu-item {
 /* Menu item text - light theme by default */
 .menu-item h3 {
     margin-top: 0;
-    color: #121212; /* Dark text for light theme */
+    color: #121212;
+    /* Dark text for light theme */
     font-size: 1.5em;
     text-align: center;
-    font-family: 'Cormorant Garamond', serif; /* Elegant serif similar to Zefani */
+    font-family: 'Cormorant Garamond', serif;
+    /* Elegant serif similar to Zefani */
     font-weight: 600;
     letter-spacing: 0.5px;
     margin-bottom: -7px;
@@ -224,38 +268,45 @@ body.dark .menu-item {
 
 body.dark .menu-item h3 {
 
-    color: #d0d472; /* Light text for dark mode */
+    color: #d0d472;
+    /* Light text for dark mode */
 
-    color: #ced08c; /* Light text for dark mode */
+    color: #ced08c;
+    /* Light text for dark mode */
 
 }
 
 .menu-item p {
-    color: #333333; /* Dark grey text for light theme */
+    color: #333333;
+    /* Dark grey text for light theme */
     margin-bottom: 15px;
     font-size: 0.9em;
     line-height: 1.4;
 }
 
 body.dark .menu-item p {
-    color: #cccccc; /* Light grey text for dark mode */
+    color: #cccccc;
+    /* Light grey text for dark mode */
 }
 
 .menu-item .price {
     display: block;
     font-weight: bold;
-    color: #0f4f12; /* Dark green for light theme */
+    color: #0f4f12;
+    /* Dark green for light theme */
     font-size: 1.2em;
     text-align: right;
 }
 
 body.dark .menu-item .price {
-    color: #57fc65; /* Light green for dark mode */
+    color: #57fc65;
+    /* Light green for dark mode */
 }
 
 /* Error messages */
 .error {
-    color: #57fc65; /* Accent color for errors */
+    color: #57fc65;
+    /* Accent color for errors */
     text-align: center;
     font-size: 1.2em;
     padding: 20px;
@@ -263,29 +314,37 @@ body.dark .menu-item .price {
 
 /* Footer - light theme by default */
 footer {
-    flex-shrink: 0; /* Prevent the footer from shrinking */
+    flex-shrink: 0;
+    /* Prevent the footer from shrinking */
     text-align: center;
     padding: 3px;
-    background-color: #66c46e; /* Light green background for footer */
-    color: #121212; /* Dark text for light theme */
+    background-color: #66c46e;
+    /* Light green background for footer */
+    color: #121212;
+    /* Dark text for light theme */
     width: 100%;
-    position: fixed; /* Change to fixed instead of sticky */
+    position: fixed;
+    /* Change to fixed instead of sticky */
     bottom: 0;
     left: 0;
     font-size: 13px;
 }
 
 body.dark footer {
-    background-color: #1f1f1f; /* Dark footer background */
-    color: #cccccc; /* Light text color */
+    background-color: #1f1f1f;
+    /* Dark footer background */
+    color: #cccccc;
+    /* Light text color */
 }
 
 /* Back to top button */
 .back-to-top {
     position: fixed;
-    bottom: 60px; /* Position above the footer */
+    bottom: 60px;
+    /* Position above the footer */
     right: 20px;
-    background-color: #57fc65; /* Accent color for the button */
+    background-color: #57fc65;
+    /* Accent color for the button */
     color: white;
     width: 40px;
     height: 40px;
@@ -298,7 +357,8 @@ body.dark footer {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: opacity 0.3s;
-    z-index: 1001; /* Ensure it's above footer */
+    z-index: 1001;
+    /* Ensure it's above footer */
 }
 
 .back-to-top.visible {
@@ -334,14 +394,16 @@ body.dark #search-bar {
 }
 
 #search-bar.visible {
-    width: 100px; /* Expand the search bar */
+    width: 100px;
+    /* Expand the search bar */
     opacity: 1;
     margin-bottom: 20px;
 }
 
 /* When the search bar is hidden, move the search icon to the extreme right */
 .search-container.hidden-bar .search-icon {
-    margin-left: auto; /* Push the search icon to the extreme right */
+    margin-left: auto;
+    /* Push the search icon to the extreme right */
 }
 
 /* Search container styling */
@@ -349,8 +411,10 @@ body.dark #search-bar {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Align to the right */
-    margin-left: auto; /* Push the search container to the right */
+    justify-content: flex-end;
+    /* Align to the right */
+    margin-left: auto;
+    /* Push the search container to the right */
 }
 
 /* Search icon - light theme by default */
@@ -358,18 +422,22 @@ body.dark #search-bar {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    color: #121212; /* Dark color for light theme */
+    color: #121212;
+    /* Dark color for light theme */
     transition: transform 0.2s ease, color 0.3s ease;
     padding-left: 5px;
 }
 
 body.dark .search-icon {
-    color: white; /* Light color for dark theme */
+    color: white;
+    /* Light color for dark theme */
 }
 
 .search-icon:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
-    color: #cccccc; /* Slightly dim the white color on hover */
+    transform: scale(1.1);
+    /* Slight zoom effect on hover */
+    color: #cccccc;
+    /* Slightly dim the white color on hover */
 }
 
 /* Responsive adjustments for mobile screens */
@@ -380,36 +448,42 @@ body.dark .search-icon {
     }
 
     #search-bar.visible {
-        width: 150px; /* Smaller search bar for mobile */
+        width: 150px;
+        /* Smaller search bar for mobile */
     }
 }
 
 @media (max-width: 480px) {
     #search-bar.visible {
-        width: 120px; /* Even smaller search bar for very small screens */
+        width: 120px;
+        /* Even smaller search bar for very small screens */
     }
 }
 
 /* Responsive adjustments for mobile screens */
 @media (max-width: 768px) {
     .search-icon {
-        width: 18px; /* Smaller size for tablets */
+        width: 18px;
+        /* Smaller size for tablets */
         height: 18px;
     }
 
     #search-bar.visible {
-        width: 150px; /* Smaller search bar for mobile */
+        width: 150px;
+        /* Smaller search bar for mobile */
     }
 }
 
 @media (max-width: 480px) {
     .search-icon {
-        width: 16px; /* Even smaller size for mobile */
+        width: 16px;
+        /* Even smaller size for mobile */
         height: 16px;
     }
 
     #search-bar.visible {
-        width: 120px; /* Even smaller search bar for very small screens */
+        width: 120px;
+        /* Even smaller search bar for very small screens */
     }
 }
 
@@ -418,17 +492,18 @@ body.dark .search-icon {
     h1 {
         font-size: 2em;
     }
-    
+
     .category-nav {
-        display: flex; /* Show category navigation on mobile */
+        display: flex;
+        /* Show category navigation on mobile */
     }
-    
+
     .category-section {
         display: flex;
         flex-direction: row;
         align-items: center;
     }
-    
+
     .menu-item {
         width: 40%;
         margin: 10px 0;
@@ -436,23 +511,32 @@ body.dark .search-icon {
 
     /* Header adjustments for mobile */
     header {
-        padding: 8px 15px; /* Reduce padding inside the header */
+        padding: 8px 15px;
+        /* Reduce padding inside the header */
     }
 
     .logo {
-        width: 50px; /* Smaller logo size */
-        height: 50px; /* Maintain circular shape */
-        margin-right: 5px; /* Reduce spacing between logo and title */
-        border: none; /* Remove border from the logo */
+        width: 50px;
+        /* Smaller logo size */
+        height: 50px;
+        /* Maintain circular shape */
+        margin-right: 5px;
+        /* Reduce spacing between logo and title */
+        border: none;
+        /* Remove border from the logo */
     }
 
     h1 {
-        font-size: 1.8em; /* Slightly smaller title font size */
-        padding-left: 0; /* Remove extra padding */
+        font-size: 1.8em;
+        /* Slightly smaller title font size */
+        padding-left: 0;
+        /* Remove extra padding */
     }
-    footer{
+
+    footer {
         font-size: 10px;
     }
+
     .menu-item-content {
         padding: 1px;
     }
@@ -463,39 +547,41 @@ body.dark .search-icon {
         font-size: 1.5em;
         padding: 0 10px;
     }
-    
+
     .menu-container {
         padding: 0 10px;
-        padding-bottom: 50px; /* Adjust for smaller footer on mobile */
+        padding-bottom: 50px;
+        /* Adjust for smaller footer on mobile */
     }
-    
+
     .category-heading {
         font-size: 1.3em;
         margin-top: 30px;
     }
-    
+
     .menu-item-content {
         padding: 1px;
     }
-    
+
     .menu-item h3 {
         font-size: 1.1em;
     }
-    
+
     .menu-item p {
         font-size: 0.85em;
     }
-    
+
     .menu-item .price {
         font-size: 1.1em;
     }
-    
+
     .menu-item-image {
         height: 150px;
     }
-    
+
     .back-to-top {
-        bottom: 50px; /* Adjust for smaller footer */
+        bottom: 50px;
+        /* Adjust for smaller footer */
         right: 10px;
         width: 35px;
         height: 35px;
@@ -503,25 +589,33 @@ body.dark .search-icon {
 
     /* Further adjustments for very small screens */
     header {
-        padding: 5px 10px; /* Further reduce padding */
+        padding: 5px 10px;
+        /* Further reduce padding */
     }
 
     .logo {
-        width: 40px; /* Even smaller logo size */
-        height: 40px; /* Maintain circular shape */
-        margin-right: -10px; /* Reduce spacing even more */
-        border: none; /* Ensure no border is applied */
+        width: 40px;
+        /* Even smaller logo size */
+        height: 40px;
+        /* Maintain circular shape */
+        margin-right: -10px;
+        /* Reduce spacing even more */
+        border: none;
+        /* Ensure no border is applied */
     }
 
     h1 {
-        font-size: 1.25rem; /* Smaller title font size */
-        padding-left: 0; /* Remove extra padding */
+        font-size: 1.25rem;
+        /* Smaller title font size */
+        padding-left: 0;
+        /* Remove extra padding */
     }
 }
 
 @media (max-width: 480px) {
     #search-bar.visible {
-        width: 120px; /* Even smaller search bar for very small screens */
+        width: 120px;
+        /* Even smaller search bar for very small screens */
     }
 }
 
@@ -530,12 +624,13 @@ body.dark .search-icon {
     .menu-item:hover {
         transform: none;
     }
-    
+
     .menu-item {
         transition: none;
     }
-    
-    button, a {
+
+    button,
+    a {
         min-height: 44px;
         min-width: 44px;
     }
@@ -543,23 +638,25 @@ body.dark .search-icon {
 
 /* Optional: add a mobile-specific size reduction if needed */
 @media (max-width: 480px) {
-  .checkbox-label {
-    width: 28px; /* Even smaller on mobile */
-    height: 10px;
-  }
-  
-  .checkbox-label .ball {
-    width: 14px;
-    height: 14px;
-  }
-  
-  .checkbox:checked + .checkbox-label .ball {
-    transform: translateX(15px);
-  }
-  
-  .fa-moon, .fa-sun {
-    font-size: 7px;
-  }
+    .checkbox-label {
+        width: 28px;
+        /* Even smaller on mobile */
+        height: 10px;
+    }
+
+    .checkbox-label .ball {
+        width: 14px;
+        height: 14px;
+    }
+
+    .checkbox:checked+.checkbox-label .ball {
+        transform: translateX(15px);
+    }
+
+    .fa-moon,
+    .fa-sun {
+        font-size: 7px;
+    }
 }
 
 
@@ -608,7 +705,7 @@ body.dark .search-icon {
 
 /* Back button style (to be used at both top and bottom) */
 .back-button {
-    
+
     /* Make it a block-level element */
     margin: 20px auto;
     /* Auto margins on left and right center it */
@@ -616,26 +713,39 @@ body.dark .search-icon {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    
-  
+
+
 }
+
 .category-header {
-    color: #0f4f12; /* Dark green for light theme */
-    border-bottom: 2px solid #0f4f12;
-    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 20px;
-    scroll-margin-top: 70px;
-    font-size: 1.3em;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0f4f12;
 }
+
 /* Light mode */
 body.dark .category-header {
     color: #66c46e;
 }
+
 /* Dark mode */
 
-.back{
+.back {
     width: 15%;
     height: auto;
+}
+
+/* Style for the back button image */
+.back-button-image {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+    cursor: pointer;
 }
 
 /* Category menu container styled as a vertical list */
@@ -648,55 +758,192 @@ body.dark .category-header {
     align-items: center;
 }
 
-/* Each list item in the category menu in a single row */
+/* General styling for category menu items */
 .category-menu-item {
     background-color: #d0d472;
-    /* Dark background for menu items */
+    /* Light background for menu items */
     border-radius: 8px;
+    /* Rounded corners */
     margin: 10px;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    /* Subtle shadow for depth */
-    transition: transform 0.2s;
+    width: 100%;
+    /* Make the card take full width */
+    max-width: 300px;
+    /* Limit the maximum width */
     overflow: hidden;
-}
-body.dark .category-header {
-    color: #66c46e;;
-}
-body.dark .category-menu-item{
-    background-color: #1f1f1f;
+    /* Prevent content overflow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* Smooth hover effect */
+    display: flex;
+    /* Use flexbox for layout */
+    flex-direction: column;
+    /* Stack content vertically */
+    align-items: flex-start;
+    /* Align content to the left */
+    justify-content: space-between;
+    /* Space out content */
+    padding: 0;
+    /* Remove padding to ensure the image sticks to the edges */
 }
 
-body.dark .category-menu-item-content {
-    color: #d0d472;
+/* Hover effect for category menu items */
+.category-menu-item:hover {
+    transform: translateY(-3px);
+    /* Slight lift on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Slightly stronger shadow on hover */
+}
+
+/* Dark mode styling for category menu items */
+body.dark .category-menu-item {
+    background-color: #1f1f1f;
+    /* Dark background for menu items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    /* Subtle shadow for dark mode */
 }
 
 /* Category menu item image: full width */
 .category-menu-item-image {
     width: 100%;
-    /* height: auto; */
-    border-radius: 10px;
-    margin-bottom: 10px;
+    height: 150px;
+    /* Adjust height to make it smaller */
+    object-fit: cover;
+    /* Ensure the image fits inside the container */
+    margin: 0;
+    /* Remove margin to stick to the edges */
+    border-radius: 0;
+    /* Remove border radius for the image */
 }
 
 /* Category menu item content below the image */
 .category-menu-item-content {
-    text-align: center;
+    padding: 10px;
+    /* Add padding only for the content */
+    text-align: left;
     width: 100%;
 }
 
-/* Category heading in detailed view */
-.detailed-view .category-heading {
-    text-align: left;
-    font-size: 28px;
-    font-weight: bold;
-    margin: 10px 0 15px 0;
-    padding-left: 10px;
-    color: #333;
+/* Category menu item heading */
+.category-menu-item-content h3 {
+    margin-top: 0;
+    color: #121212;
+    /* Dark text for light theme */
+    font-size: 1.2em;
+    /* Adjust font size */
+    font-family: 'Cormorant Garamond', serif;
+    /* Elegant serif similar to Zefani */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+    /* Add spacing below the heading */
 }
 
+/* Dark mode heading */
+body.dark .category-menu-item-content h3 {
+    color: #ced08c;
+    /* Light text for dark mode */
+}
 
+/* Category menu item description */
+.category-menu-item-content p {
+    color: #333333;
+    /* Dark grey text for light theme */
+    margin-bottom: 10px;
+    /* Adjust spacing below the description */
+    font-size: 0.9em;
+    /* Adjust font size */
+    line-height: 1.4;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    /* Adjust line height for readability */
+}
 
-/* .menu-item-content {
-     padding-top: 12px;
-    padding-bottom: 12px; }*/
+/* Dark mode description */
+body.dark .category-menu-item-content p {
+    color: #cccccc;
+    /* Light grey text for dark mode */
+}
+
+/* Category menu item price */
+.category-menu-item-content .price {
+    display: block;
+    font-weight: bold;
+    color: #0f4f12;
+    /* Dark green for light theme */
+    font-size: 1.1em;
+    /* Adjust font size */
+    text-align: right;
+    /* Align price to the right */
+    margin-top: 5px;
+    /* Add spacing above the price */
+}
+
+/* Dark mode price */
+body.dark .category-menu-item-content .price {
+    color: #57fc65;
+    /* Light green for dark mode */
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+    .category-menu-item {
+        width: 90%;
+        /* Full width for tablets */
+        margin: 10px auto;
+        /* Center the cards */
+    }
+}
+
+@media (max-width: 480px) {
+    .category-menu-item {
+        width: 100%;
+        /* Full width for very small screens */
+        margin: 10px 0;
+        /* Reduce spacing between cards */
+    }
+
+    .category-menu-item-image {
+        height: 150px;
+        /* Smaller image height for mobile */
+    }
+
+    .category-menu-item-content h3 {
+        font-size: 1.3em;
+        /* Smaller font size for mobile */
+    }
+
+    .category-menu-item-content p {
+        font-size: 0.95em;
+        /* Smaller font size for description */
+    }
+
+    .category-menu-item-content .price {
+        font-size: 1em;
+        margin-right: 17px;
+        /* Adjust price font size */
+    }
+}
+
+/* Category header text styling */
+.category-header h1 {
+    font-family: 'Playfair Display', serif;
+    /* Original font family */
+    font-weight: 600;
+    /* Original font weight */
+    font-size: 1.3rem;
+    /* Adjust font size for better visibility */
+    color: #0f4f12;
+    /* Dark color for light theme */
+    margin: -20px;
+    margin-right: 1px;
+    padding: 0;
+    /* Remove extra padding */
+    border-bottom: 2px solid #0f4f12;
+}
+
+/* Dark mode styles for category header text */
+body.dark .category-header h1 {
+    color: #57fc65;
+    /* Light text color for dark mode */
+}
