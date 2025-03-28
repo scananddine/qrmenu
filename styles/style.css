@@ -3,7 +3,12 @@ html, body {
     min-height: 100%;
     height: 100%;
 }
-
+.back {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px; /* Space between icon and text */
+    color: #121212; /* Dark color for light theme */
+}
 body {
     display: flex;
     flex-direction: column;
@@ -603,21 +608,30 @@ body.dark .search-icon {
 
 /* Back button style (to be used at both top and bottom) */
 .back-button {
-    display: block;
+    
     /* Make it a block-level element */
     margin: 20px auto;
     /* Auto margins on left and right center it */
-    padding: 10px 20px;
-    color: #ff6600;
     /* background: #ff6600; */
     background-color: transparent;
     border: none;
     cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-    overflow:auto;
+    
+  
 }
+.category-header {
+    color: #0f4f12; /* Dark green for light theme */
+    border-bottom: 2px solid #0f4f12;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    scroll-margin-top: 70px;
+    font-size: 1.3em;
+}
+/* Light mode */
+body.dark .category-header {
+    color: #66c46e;
+}
+/* Dark mode */
 
 .back{
     width: 15%;
@@ -646,7 +660,9 @@ body.dark .search-icon {
     transition: transform 0.2s;
     overflow: hidden;
 }
-
+body.dark .category-header {
+    color: #66c46e;;
+}
 body.dark .category-menu-item{
     background-color: #1f1f1f;
 }

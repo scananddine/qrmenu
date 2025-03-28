@@ -277,7 +277,10 @@ function renderCategoryItems(category) {
         menuContainer.innerHTML = `<p>No items available in this category.</p>`;
         return;
     }
-
+    const categoryHeader = document.createElement('h1');
+    categoryHeader.textContent = category; // Set the category name as the header
+    categoryHeader.classList.add('category-header');
+    menuContainer.appendChild(categoryHeader);
     const categorySection = document.createElement('div');
     categorySection.classList.add('category-menu');
 
