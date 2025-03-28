@@ -648,55 +648,125 @@ body.dark .category-header {
     align-items: center;
 }
 
-/* Each list item in the category menu in a single row */
+/* General styling for category menu items */
 .category-menu-item {
-    background-color: #d0d472;
-    /* Dark background for menu items */
-    border-radius: 8px;
+    background-color: #d0d472; /* Light background for menu items */
+    border-radius: 8px; /* Rounded corners */
     margin: 10px;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    /* Subtle shadow for depth */
-    transition: transform 0.2s;
-    overflow: hidden;
-}
-body.dark .category-header {
-    color: #66c46e;;
-}
-body.dark .category-menu-item{
-    background-color: #1f1f1f;
+    width: 100%; /* Make the card take full width */
+    max-width: 300px; /* Limit the maximum width */
+    overflow: hidden; /* Prevent content overflow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack content vertically */
+    align-items: flex-start; /* Align content to the left */
+    justify-content: space-between; /* Space out content */
+    padding: 0; /* Remove padding to ensure the image sticks to the edges */
 }
 
-body.dark .category-menu-item-content {
-    color: #d0d472;
+/* Hover effect for category menu items */
+.category-menu-item:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on hover */
+}
+
+/* Dark mode styling for category menu items */
+body.dark .category-menu-item {
+    background-color: #1f1f1f; /* Dark background for menu items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for dark mode */
 }
 
 /* Category menu item image: full width */
 .category-menu-item-image {
     width: 100%;
-    /* height: auto; */
-    border-radius: 10px;
-    margin-bottom: 10px;
+    height: 150px; /* Adjust height to make it smaller */
+    object-fit: cover; /* Ensure the image fits inside the container */
+    margin: 0; /* Remove margin to stick to the edges */
+    border-radius: 0; /* Remove border radius for the image */
 }
 
 /* Category menu item content below the image */
 .category-menu-item-content {
-    text-align: center;
+    padding: 10px; /* Add padding only for the content */
+    text-align: left;
     width: 100%;
 }
 
-/* Category heading in detailed view */
-.detailed-view .category-heading {
-    text-align: left;
-    font-size: 28px;
-    font-weight: bold;
-    margin: 10px 0 15px 0;
-    padding-left: 10px;
-    color: #333;
+/* Category menu item heading */
+.category-menu-item-content h3 {
+    margin-top: 0;
+    color: #121212; /* Dark text for light theme */
+    font-size: 1.2em; /* Adjust font size */
+    font-family: 'Cormorant Garamond', serif; /* Elegant serif similar to Zefani */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px; /* Add spacing below the heading */
 }
 
+/* Dark mode heading */
+body.dark .category-menu-item-content h3 {
+    color: #ced08c; /* Light text for dark mode */
+}
 
+/* Category menu item description */
+.category-menu-item-content p {
+    color: #333333; /* Dark grey text for light theme */
+    margin-bottom: 10px; /* Adjust spacing below the description */
+    font-size: 0.9em; /* Adjust font size */
+    line-height: 1.4; 
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;/* Adjust line height for readability */
+}
 
-/* .menu-item-content {
-     padding-top: 12px;
-    padding-bottom: 12px; }*/
+/* Dark mode description */
+body.dark .category-menu-item-content p {
+    color: #cccccc; /* Light grey text for dark mode */
+}
+
+/* Category menu item price */
+.category-menu-item-content .price {
+    display: block;
+    font-weight: bold;
+    color: #0f4f12; /* Dark green for light theme */
+    font-size: 1.1em; /* Adjust font size */
+    text-align: right; /* Align price to the right */
+    margin-top: 5px; /* Add spacing above the price */
+}
+
+/* Dark mode price */
+body.dark .category-menu-item-content .price {
+    color: #57fc65; /* Light green for dark mode */
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+    .category-menu-item {
+        width: 90%; /* Full width for tablets */
+        margin: 10px auto; /* Center the cards */
+    }
+}
+
+@media (max-width: 480px) {
+    .category-menu-item {
+        width: 100%; /* Full width for very small screens */
+        margin: 10px 0; /* Reduce spacing between cards */
+    }
+
+    .category-menu-item-image {
+        height: 150px; /* Smaller image height for mobile */
+    }
+
+    .category-menu-item-content h3 {
+        font-size: 1.3em; /* Smaller font size for mobile */
+    }
+
+    .category-menu-item-content p {
+        font-size: 0.95em; /* Smaller font size for description */
+    }
+
+    .category-menu-item-content .price {
+        font-size: 1em; 
+        margin-right: 17px;/* Adjust price font size */
+    }
+}
