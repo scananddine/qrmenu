@@ -277,8 +277,13 @@ function renderCategoryItems(category) {
         menuContainer.innerHTML = `<p>No items available in this category.</p>`;
         return;
     }
+<<<<<<< HEAD
    // Create category header with back button
     const categoryHeader = document.createElement('div');
+=======
+    const categoryHeader = document.createElement('h2');
+    categoryHeader.textContent = category; // Set the category name as the header
+>>>>>>> f19f8bfad8a31a974a0149f7a5103c4a1b5d198c
     categoryHeader.classList.add('category-header');
 
     const backButton = document.createElement('img');
@@ -326,6 +331,23 @@ function renderCategoryItems(category) {
     });
 
     menuContainer.appendChild(categorySection);
+<<<<<<< HEAD
+=======
+
+    const backButton = document.createElement('button');
+    backButton.innerHTML = '<img class="back" src="./images/back-button.png" alt="Back">';
+    backButton.classList.add('back-button'); 
+
+    backButton.addEventListener('click', () => {
+        menuContainer.classList.remove('detailed-view'); 
+        renderMenu(menuData.menu); 
+    });
+    document.querySelector('header h1').addEventListener('click', () => {
+        menuContainer.classList.remove('detailed-view'); // Remove detailed view class if present
+        renderMenu(menuData.menu); // Render the main menu
+    });
+    menuContainer.appendChild(backButton);
+>>>>>>> f19f8bfad8a31a974a0149f7a5103c4a1b5d198c
 }
 
 // Attach event listeners to menu items (Modify this in your existing `renderMenu` function)
