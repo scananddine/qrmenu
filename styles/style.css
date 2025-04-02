@@ -861,7 +861,7 @@ body.dark .category-menu-item-content h3 {
 
 /* Dark mode description */
 body.dark .category-menu-item-content p {
-    color: #cccccc;
+    color: #d1d2a7;
     /* Light grey text for dark mode */
 }
 
@@ -871,7 +871,7 @@ body.dark .category-menu-item-content p {
     font-weight: bold;
     color: #0f4f12;
     /* Dark green for light theme */
-    font-size: 1.1em;
+    font-size: 1.4em;
     /* Adjust font size */
     text-align: right;
     /* Align price to the right */
@@ -921,7 +921,7 @@ body.dark .category-menu-item-content .price {
     }
 
     .category-menu-item-content .price {
-        font-size: 1em;
+        font-size: 1.2em;
         margin-right: 17px;
         /* Adjust price font size */
     }
