@@ -134,8 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Filter menu items based on search query (updated to include categoryLists)
     function filterMenu(query) {
-        // If query is empty, show the main menu
-        if (!query.trim()) {
+        // Clean up the query by trimming and handling multiple spaces
+        const cleanQuery = query.trim().replace(/\s+/g, ' ');
+
+        // If query is empty or only spaces, show the main menu
+        if (!cleanQuery) {
             renderMenu(menuData.menu);
             return;
         }
@@ -144,10 +147,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // First, check the main menu items
         const mainMenuFiltered = menuData.menu.filter(item => {
-            const nameMatch = item.name.toLowerCase().includes(query.toLowerCase());
-            const descriptionMatch = item.description && item.description.toLowerCase().includes(query.toLowerCase());
-            const typeMatch = item.type && item.type.toLowerCase().includes(query.toLowerCase());
-            const categoryMatch = item.category && item.category.toLowerCase().includes(query.toLowerCase());
+            const nameMatch = item.name.toLowerCase().includes(cleanQuery.toLowerCase());
+            const descriptionMatch = item.description && item.description.toLowerCase().includes(cleanQuery.toLowerCase());
+            const typeMatch = item.type && item.type.toLowerCase().includes(cleanQuery.toLowerCase());
+            const categoryMatch = item.category && item.category.toLowerCase().includes(cleanQuery.toLowerCase());
             return nameMatch || descriptionMatch || typeMatch || categoryMatch;
         });
         
@@ -157,10 +160,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Then, search through all category items
         for (const category in categoryLists) {
             const categoryItemsFiltered = categoryLists[category].filter(item => {
-                const nameMatch = item.name.toLowerCase().includes(query.toLowerCase());
-                const descriptionMatch = item.description && item.description.toLowerCase().includes(query.toLowerCase());
-                const typeMatch = item.type && item.type.toLowerCase().includes(query.toLowerCase());
-                const categoryMatch = category.toLowerCase().includes(query.toLowerCase());
+                const nameMatch = item.name.toLowerCase().includes(cleanQuery.toLowerCase());
+                const descriptionMatch = item.description && item.description.toLowerCase().includes(cleanQuery.toLowerCase());
+                const typeMatch = item.type && item.type.toLowerCase().includes(cleanQuery.toLowerCase());
+                const categoryMatch = category.toLowerCase().includes(cleanQuery.toLowerCase());
                 return nameMatch || descriptionMatch || typeMatch || categoryMatch;
             });
             

@@ -303,7 +303,7 @@ body.dark .menu-item .price {
 
 /* Error messages */
 .error {
-    color: #57fc65;
+    color: #000;
     /* Accent color for errors */
     text-align: center;
     font-size: 1.2em;
