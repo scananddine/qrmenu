@@ -132,17 +132,80 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Filter menu items based on search query
+    // Filter menu items based on search query (updated to include categoryLists)
     function filterMenu(query) {
-        const filteredMenu = menuData.menu.filter(item => {
+        // If query is empty, show the main menu
+        if (!query.trim()) {
+            renderMenu(menuData.menu);
+            return;
+        }
+
+        const filteredItems = [];
+        
+        // First, check the main menu items
+        const mainMenuFiltered = menuData.menu.filter(item => {
             const nameMatch = item.name.toLowerCase().includes(query.toLowerCase());
-            const descriptionMatch = item.description.toLowerCase().includes(query.toLowerCase());
-            const typeMatch = item.type.toLowerCase().includes(query.toLowerCase());
-            const categoryMatch = item.category.toLowerCase().includes(query.toLowerCase());
+            const descriptionMatch = item.description && item.description.toLowerCase().includes(query.toLowerCase());
+            const typeMatch = item.type && item.type.toLowerCase().includes(query.toLowerCase());
+            const categoryMatch = item.category && item.category.toLowerCase().includes(query.toLowerCase());
             return nameMatch || descriptionMatch || typeMatch || categoryMatch;
         });
-
-        renderMenu(filteredMenu);
+        
+        // Add filtered main menu items
+        filteredItems.push(...mainMenuFiltered);
+        
+        // Then, search through all category items
+        for (const category in categoryLists) {
+            const categoryItemsFiltered = categoryLists[category].filter(item => {
+                const nameMatch = item.name.toLowerCase().includes(query.toLowerCase());
+                const descriptionMatch = item.description && item.description.toLowerCase().includes(query.toLowerCase());
+                const typeMatch = item.type && item.type.toLowerCase().includes(query.toLowerCase());
+                const categoryMatch = category.toLowerCase().includes(query.toLowerCase());
+                return nameMatch || descriptionMatch || typeMatch || categoryMatch;
+            });
+            
+            if (categoryItemsFiltered.length > 0) {
+                // If we found matching items in this category, show them
+                const categorySection = document.createElement('div');
+                categorySection.classList.add('search-results-category');
+                
+                const categoryHeading = document.createElement('h2');
+                categoryHeading.textContent = category;
+                categoryHeading.classList.add('category-heading');
+                
+                menuContainer.innerHTML = ''; // Clear the container
+                menuContainer.appendChild(categoryHeading);
+                
+                const itemsSection = document.createElement('div');
+                itemsSection.classList.add('category-menu'); // Changed to category-menu to match the styling
+                
+                categoryItemsFiltered.forEach(item => {
+                    const menuItem = document.createElement('div');
+                    menuItem.classList.add('category-menu-item'); // Changed to category-menu-item for consistent styling
+                    menuItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="category-menu-item-image">
+                        <div class="category-menu-item-content">
+                            <h3>${item.name}</h3>
+                            <p>${item.description}</p>
+                            <p class="price"><strong>₹${item.price}</strong></p>
+                        </div>
+                    `;
+                    
+                    itemsSection.appendChild(menuItem);
+                });
+                
+                menuContainer.appendChild(itemsSection);
+                return; // Stop after showing results from the first matching category
+            }
+        }
+        
+        // If no items found in categories but found in main menu, show those
+        if (filteredItems.length > 0) {
+            renderMenu(filteredItems);
+        } else {
+            // If no items found at all, show a message
+            menuContainer.innerHTML = '<p class="error">No items found matching your search.</p>';
+        }
     }
 
     // Event listener for the search bar
@@ -175,169 +238,169 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Separate lists for each category
-const categoryLists = {
-     Pizza: [
-        {
-            id: 1,
-            name: "Margherita Pizza",
-            description: "Classic pizza with fresh mozzarella, tomatoes, and basil.",
-            price: 450,
-            type: "Vegetarian",
-            image: "./images/pizza_margherita.jpeg"
-        },
-        {
-            id: 2,
-            name: "Veggie Supreme Pizza",
-            description: "Topped with bell peppers, onions, olives, and mushrooms.",
-            price: 450,
-            type: "Vegetarian",
-            image: "./images/pizza_veggie.jpg"
+    const categoryLists = {
+        Pizza: [
+            {
+                id: 1,
+                name: "Margherita Pizza",
+                description: "Classic pizza with fresh mozzarella, tomatoes, and basil.",
+                price: 450,
+                type: "Vegetarian",
+                image: "./images/pizza_margherita.jpeg"
+            },
+            {
+                id: 2,
+                name: "Veggie Supreme Pizza",
+                description: "Topped with bell peppers, onions, olives, and mushrooms.",
+                price: 450,
+                type: "Vegetarian",
+                image: "./images/pizza_veggie.jpg"
+            }
+        ],
+        Pasta: [
+            {
+                id: 3,
+                name: "Penne Arrabbiata",
+                description: "Penne pasta in a spicy tomato sauce with fresh herbs.",
+                price: 450,
+                type: "Vegetarian",
+                image: "./images/pasta_arrabbiata.jpg"
+            },
+            {
+                id: 4,
+                name: "Vegetable Alfredo Pasta",
+                description: "Fettuccine pasta with creamy alfredo sauce and mixed vegetables.",
+                price: 450,
+                type: "Vegetarian",
+                image: "./images/pasta_alfredo.jpg"
+            }
+        ],
+        Burger: [
+            {
+                id: 5,
+                name: "Classic Veggie Burger",
+                description: "A delicious plant-based patty with lettuce, tomato, and cheese.",
+                price: 450,
+                type: "Vegetarian",
+                image: "./images/burger_veggie.jpg"
+            },
+            {
+                id: 6,
+                name: "Spicy Paneer Burger",
+                description: "Crispy paneer patty with a spicy mayo sauce.",
+                price: 450,
+                type: "Vegetarian",
+                image: "./images/burger_paneer.jpg"
+            },
+            {
+                id: 7,
+                name: "Mushroom Swiss Burger",
+                description: "Grilled mushrooms with melted Swiss cheese on a toasted bun.",
+                price: 450,
+                type: "Vegetarian",
+                image: "./images/burger_mushroom.jpg"
+            }
+        ],
+        Nachos: [
+            {
+                id: 8,
+                name: "Cheesy Nachos",
+                description: "Crunchy tortilla chips topped with melted cheese and jalapeños.",
+                price: 450,
+                type: "Vegetarian",
+                image: "./images/nachos_cheese.jpg"
+            },
+            {
+                id: 9,
+                name: "Loaded Veggie Nachos",
+                description: "Tortilla chips with beans, guacamole, sour cream, and salsa.",
+                price: 450,
+                type: "Vegetarian",
+                image: "./images/nachos_loaded.jpg"
+            },
+            {
+                id: 10,
+                name: "Spicy Mexican Nachos",
+                description: "Tortilla chips with spicy salsa, corn, and cheese.",
+                price: 450,
+                type: "Vegetarian",
+                image: "./images/nachos_mexican.jpg"
+            }
+        ]
+    };
+
+    // Render the list of items for a specific category
+    function renderCategoryItems(category) {
+        menuContainer.innerHTML = ''; // Clear the container
+        menuContainer.classList.add('detailed-view');
+
+        const categoryItems = categoryLists[category];
+
+        if (!categoryItems || categoryItems.length === 0) {
+            menuContainer.innerHTML = `<p>No items available in this category.</p>`;
+            return;
         }
-    ],
-    Pasta: [
-        {
-            id: 3,
-            name: "Penne Arrabbiata",
-            description: "Penne pasta in a spicy tomato sauce with fresh herbs.",
-            price: 450,
-            type: "Vegetarian",
-            image: "./images/pasta_arrabbiata.jpg"
-        },
-        {
-            id: 4,
-            name: "Vegetable Alfredo Pasta",
-            description: "Fettuccine pasta with creamy alfredo sauce and mixed vegetables.",
-            price: 450,
-            type: "Vegetarian",
-            image: "./images/pasta_alfredo.jpg"
-        }
-    ],
-    Burger: [
-        {
-            id: 5,
-            name: "Classic Veggie Burger",
-            description: "A delicious plant-based patty with lettuce, tomato, and cheese.",
-            price: 450,
-            type: "Vegetarian",
-            image: "./images/burger_veggie.jpg"
-        },
-        {
-            id: 6,
-            name: "Spicy Paneer Burger",
-            description: "Crispy paneer patty with a spicy mayo sauce.",
-            price: 450,
-            type: "Vegetarian",
-            image: "./images/burger_paneer.jpg"
-        },
-        {
-            id: 7,
-            name: "Mushroom Swiss Burger",
-            description: "Grilled mushrooms with melted Swiss cheese on a toasted bun.",
-            price: 450,
-            type: "Vegetarian",
-            image: "./images/burger_mushroom.jpg"
-        }
-    ],
-    Nachos: [
-        {
-            id: 8,
-            name: "Cheesy Nachos",
-            description: "Crunchy tortilla chips topped with melted cheese and jalapeños.",
-            price: 450,
-            type: "Vegetarian",
-            image: "./images/nachos_cheese.jpg"
-        },
-        {
-            id: 9,
-            name: "Loaded Veggie Nachos",
-            description: "Tortilla chips with beans, guacamole, sour cream, and salsa.",
-            price: 450,
-            type: "Vegetarian",
-            image: "./images/nachos_loaded.jpg"
-        },
-        {
-            id: 10,
-            name: "Spicy Mexican Nachos",
-            description: "Tortilla chips with spicy salsa, corn, and cheese.",
-            price: 450,
-            type: "Vegetarian",
-            image: "./images/nachos_mexican.jpg"
-        }
-    ]
-};
+        // Create category header with back button
+        const categoryHeader = document.createElement('div');
+        categoryHeader.classList.add('category-header');
 
-// Render the list of items for a specific category
-function renderCategoryItems(category) {
-    menuContainer.innerHTML = ''; // Clear the container
-    menuContainer.classList.add('detailed-view');
-
-    const categoryItems = categoryLists[category];
-
-    if (!categoryItems || categoryItems.length === 0) {
-        menuContainer.innerHTML = `<p>No items available in this category.</p>`;
-        return;
-    }
-   // Create category header with back button
-    const categoryHeader = document.createElement('div');
-    categoryHeader.classList.add('category-header');
-
-    const backButton = document.createElement('img');
-    backButton.src = document.body.classList.contains('dark') 
-        ? "./images/dark_back_btn.png"
-        : "./images/light_back_btn.png";
-    backButton.alt = 'Back';
-    backButton.classList.add('back-button-image');
-
-    // Update back button image on theme change
-    const checkbox = document.getElementById('checkbox');
-    checkbox.addEventListener('change', () => {
+        const backButton = document.createElement('img');
         backButton.src = document.body.classList.contains('dark') 
             ? "./images/dark_back_btn.png"
             : "./images/light_back_btn.png";
-    });
+        backButton.alt = 'Back';
+        backButton.classList.add('back-button-image');
 
-    backButton.addEventListener('click', () => {
-        menuContainer.classList.remove('detailed-view'); // Remove detailed view class
-        renderMenu(menuData.menu); // Render the main menu
-    });
+        // Update back button image on theme change
+        const checkbox = document.getElementById('checkbox');
+        checkbox.addEventListener('change', () => {
+            backButton.src = document.body.classList.contains('dark') 
+                ? "./images/dark_back_btn.png"
+                : "./images/light_back_btn.png";
+        });
 
-    const categoryTitle = document.createElement('h1');
-    categoryTitle.textContent = category;
+        backButton.addEventListener('click', () => {
+            menuContainer.classList.remove('detailed-view'); // Remove detailed view class
+            renderMenu(menuData.menu); // Render the main menu
+        });
 
-    categoryHeader.appendChild(backButton);
-    categoryHeader.appendChild(categoryTitle);
-    menuContainer.appendChild(categoryHeader);
-    const categorySection = document.createElement('div');
-    categorySection.classList.add('category-menu');
+        const categoryTitle = document.createElement('h1');
+        categoryTitle.textContent = category;
 
-    categoryItems.forEach(item => {
-        const menuItem = document.createElement('div');
-        menuItem.classList.add('category-menu-item');
-        menuItem.innerHTML = `
-            <img src="${item.image}" alt="${item.name}" class="category-menu-item-image">
-            <div class="category-menu-item-content">
-                <h3>${item.name}</h3>
-                <p>${item.description}</p>
-                <p class="price"><strong>₹${item.price.toFixed(2)}</strong></p>
-            </div>
-        `;
+        categoryHeader.appendChild(backButton);
+        categoryHeader.appendChild(categoryTitle);
+        menuContainer.appendChild(categoryHeader);
+        const categorySection = document.createElement('div');
+        categorySection.classList.add('category-menu');
 
-        categorySection.appendChild(menuItem);
-    });
+        categoryItems.forEach(item => {
+            const menuItem = document.createElement('div');
+            menuItem.classList.add('category-menu-item');
+            menuItem.innerHTML = `
+                <img src="${item.image}" alt="${item.name}" class="category-menu-item-image">
+                <div class="category-menu-item-content">
+                    <h3>${item.name}</h3>
+                    <p>${item.description}</p>
+                    <p class="price"><strong>₹${item.price.toFixed(2)}</strong></p>
+                </div>
+            `;
 
-    menuContainer.appendChild(categorySection);
-}
+            categorySection.appendChild(menuItem);
+        });
 
-// Attach event listeners to menu items (Modify this in your existing `renderMenu` function)
-document.addEventListener('click', (event) => {
-    const clickedItem = event.target.closest('.menu-item');
-    if (clickedItem) {
-        const itemName = clickedItem.querySelector('h3').textContent;
-        if (categoryLists[itemName]) {
-            renderCategoryItems(itemName);
-        }
+        menuContainer.appendChild(categorySection);
     }
-});
+
+    // Attach event listeners to menu items (Modify this in your existing `renderMenu` function)
+    document.addEventListener('click', (event) => {
+        const clickedItem = event.target.closest('.menu-item');
+        if (clickedItem) {
+            const itemName = clickedItem.querySelector('h3').textContent;
+            if (categoryLists[itemName]) {
+                renderCategoryItems(itemName);
+            }
+        }
+    });
 
     renderMenu(menuData.menu);
     initMobileNavigation();

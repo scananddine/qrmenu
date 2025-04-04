@@ -1,4 +1,4 @@
-/* Light background for the body (default theme)  */
+
 html,
 body {
     min-height: 100%;
@@ -9,9 +9,7 @@ body {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    /* Space between icon and text */
     color: #121212;
-    /* Dark color for light theme */
 }
 
 body {
